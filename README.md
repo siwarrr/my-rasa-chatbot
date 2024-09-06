@@ -1,6 +1,6 @@
 # Rasa Chatbot
 
-![Rasa Logo](https://upload.wikimedia.org/wikipedia/commons/2/20/Rasa_logo.svg)  
+![Rasa Logo](https://tse1.mm.bing.net/th?id=OIP.wpLMXR3KQvo7QgPpBMBg8QHaDm&pid=Api&P=0&h=180)  
 
 **Rasa** is an open-source framework designed for building powerful and flexible conversational AI, including chatbots, using **Natural Language Processing (NLP)** and **Natural Language Understanding (NLU)** models. It allows developers to create highly interactive, context-aware chatbots that can understand user intents, manage dialogue, and deliver appropriate responses.
 
