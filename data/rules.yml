@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask how to talk with teacher
+  steps:
+    - intent: ask_talk_with_teacher
+    - action: action_provide_chat_link
+
+- rule: Respond to course query
+  steps:
+    - intent: inquire_courses
+    - action: action_list_courses
+
+- rule: Respond to register courses query
+  steps:
+    - intent: register_courses
+    - action: utter_register_course
+
+- rule: Respond to enrolled courses query
+  steps:
+    - intent: enrolled_courses
+    - action: utter_enrolled_courses
+
+- rule: Respond to complaint query
+  steps:
+    - intent: complaint_send
+    - action: utter_complaints
+
+- rule: Search courses
+  steps:
+    - intent: search_courses
+    - action: action_search_courses
+
+- rule: Understand subject
+  steps:
+    - intent: understand_subject
+    - action: action_answer_course_content_query
+
+- rule: List enrolled courses
+  steps:
+    - intent: list_enrolled_courses
+    - action: action_list_enrolled_courses
+
+- rule: Check course quizzes
+  steps:
+    - intent: inquire_course_quizzes
+    - action: action_inquire_course_quizzes

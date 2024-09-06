@@ -1,0 +1,175 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_talk_with_teacher
+  - inquire_courses
+  - register_courses
+  - enrolled_courses
+  - complaint_send
+  - signup_steps
+  - login_steps
+  - login_request
+  - search_courses
+  - select_course
+  - understand_subject
+  - list_enrolled_courses
+  - inquire_course_quizzes
+  - ask_advanced_question
+
+entities:
+  - course_name
+  - course_number
+  - subject
+
+slots:
+  course_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_name
+      - type: from_text
+        not_intent: []
+
+  course_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_number
+
+  subject:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: subject
+
+  search_results:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  last_query:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  lessons:
+    type: list  
+    influence_conversation: true
+    mappings:
+      - type: from_text
+
+  lesson_info:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+  
+  enrolled_courses:
+    type: list
+    mappings:
+      - type: from_text
+
+  course_quizzes:
+    type: list
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_talk_with_teacher:
+    - text: "You can talk with your teacher on the chat page: just click on 'messages' in the header on the right side of the page. <a href='http://localhost:4200/learner/chat'>click here</a>"
+
+  utter_courses:
+    - text: "To access our available courses, please log in if you are registered. If not, sign up now!"
+  
+  utter_register_course:
+    - text: "To register for the courses, you just need to be connected to our platform, then click on the 'Participate' button for each course in the list. A message will then be displayed asking: 'Do you want to participate in this course?' Click 'OK' if you want to enroll in this course, or click 'Cancel' if you do not want to enroll."
+
+  utter_enrolled_courses:
+    - text: "To find your courses, you just need to be connected. Then, you can simply click on the header of the page. After the search input, you will find the word 'My Learning' in English, 'Mon apprentissage' in French, or 'تعلمي' in Arabic. Just click on this dropdown menu, and it will display the list of courses you are enrolled in!"
+      image: "http://localhost:8000/myLearning.png"
+
+  utter_complaints:
+    - text: "To submit a complaint or feedback to the administration of our platform, you just need to be connected. Then, simply navigate to the bottom of the page, where you will find a text area to enter your feedback. After that, click the 'Add Review' button."
+
+  utter_signup: 
+    - text: "To register, you need to enter your full name, email, choose whether you want to register as: 1st choice: 'Learner', 2nd choice: 'Teacher'. Then select if you have your type of disability from the dropdown list, enter a password, re-enter this password to confirm it, and then click the 'Register' button. <a href='http://localhost:4200/welcome/register'>click here</a>"
+
+  utter_login:
+    - text: "To log in to our platform, simply enter your email and password, then click the 'login' button. <a href='http://localhost:4200/welcome/login'>click here</a>"
+  
+  utter_redirect_to_login:
+    - text: ""
+    - custom:
+        redirect: "http://localhost:4200/welcome/login"
+      
+  utter_search_courses:
+  - text: "I am looking for courses for you..."
+
+  utter_course_link:
+    - text: "Course: {course_name} - Lesson: {lesson_name}\n{course_link}"
+
+  utter_list_enrolled_courses:
+    - text: "Fetching your enrolled courses..."
+
+  utter_course_quizzes:
+    - text: "Here are the quizzes for the course '{course_name}': {quizzes}"
+
+  utter_no_quizzes:
+    - text: "There are no quizzes available for the course '{course_name}'."
+
+  utter_not_enrolled:
+    - text: "You need to enroll in the course '{course_name}' to access the quizzes."
+  
+  utter_default:
+    - text: "Sorry, I couldn't understand the subject you want to learn about."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+  - utter_greet
+  - action_chatbot
+  - action_provide_chat_link
+  - action_list_courses
+  - action_provide_login_link
+  - action_provide_signup_link
+  - action_redirect_to_login
+  - action_search_courses
+  - action_answer_course_content_query
+  - action_list_enrolled_courses
+  - action_inquire_course_quizzes
+  - action_generate_advanced_gpt_response
+
+
+

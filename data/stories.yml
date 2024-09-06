@@ -1,0 +1,102 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: ask how to talk with teacher
+  steps:
+  - intent: ask_talk_with_teacher
+  - action: action_provide_chat_link
+
+- story: Respond to course query
+  steps:
+  - intent: inquire_courses
+  - action: action_list_courses
+
+- story: Respond to register courses query
+  steps: 
+  - intent: register_courses
+  - action: utter_register_course
+
+- story: Respond to enrolled courses query
+  steps:
+  - intent: enrolled_courses
+  - action: utter_enrolled_courses
+
+- story: Respond to complaint query
+  steps:
+  - intent: complaint_send
+  - action: utter_complaints
+
+- story: Respond to signup query
+  steps:
+  - intent: signup_steps
+  - action: action_provide_signup_link
+  - intent: affirm
+  - action: utter_happy
+
+- story: Respond to login query
+  steps:
+  - intent: login_steps
+  - action: action_provide_login_link
+  - action: action_redirect_to_login
+  - intent: affirm
+  - action: utter_happy
+
+- story: search courses
+  steps:
+  - intent: search_courses
+  - action: action_search_courses
+
+- story: understand subject
+  steps:
+  - intent: understand_subject
+  - action: action_answer_course_content_query
+  - slot_was_set:
+    - lessons: []
+
+- story: List enrolled courses
+  steps:
+  - intent: list_enrolled_courses
+  - action: action_list_enrolled_courses
+
+- story: Check course quizzes
+  steps:
+  - intent: inquire_course_quizzes
+  - action: action_inquire_course_quizzes
+
+- story: User asks for help
+  steps:
+  - intent: ask_advanced_question
+  - action: action_generate_advanced_gpt_response

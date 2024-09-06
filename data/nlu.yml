@@ -1,0 +1,356 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - مرحبا
+    - أهلاً
+    - صباح الخير
+    - مساء الخير
+    - salut
+    - bonjour
+    - bonsoir
+    - coucou
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - وداعاً
+    - إلى اللقاء
+    - أراك لاحقاً
+    - تصبح على خير
+    - à bientôt
+    - à plus tard
+    - bonne nuit
+    - salut
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - نعم
+    - بالتأكيد
+    - صحيح
+    - oui
+    - absolument
+    - bien sûr
+    - exactement
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - لا
+    - ليس كذلك
+    - لا أعتقد ذلك
+    - مستحيل
+    - non
+    - pas du tout
+    - absolument pas
+    - je ne pense pas
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - أشعر بأنني عظيم
+    - رائع
+    - مذهل
+    - parfait
+    - super
+    - formidable
+    - incroyable
+    - excellent
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so sad
+    - يومي كان سيئاً
+    - أنا حزين
+    - لا أشعر أنني بخير
+    - أنا مستاء
+    - triste
+    - déçu
+    - pas bien
+    - extrêmement triste
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - هل أنت روبوت؟
+    - هل أنت إنسان؟
+    - هل أتحدث إلى روبوت؟
+    - هل أتحدث إلى إنسان؟
+    - es-tu un robot ?
+    - es-tu un humain ?
+    - suis-je en train de parler à un robot ?
+    - suis-je en train de parler à un humain ?
+
+- intent: ask_talk_with_teacher
+  examples: |
+    - How to talk with my teacher?
+    - I want to talk with my teacher.
+    - How can I speak to my teacher?
+    - I need to talk to my teacher.
+    - كيف يمكنني التحدث مع معلمي؟
+    - أريد التحدث مع معلمي
+    - comment parler à mon professeur ?
+    - je veux parler à mon professeur
+    - comment puis-je discuter avec mon enseignant ?
+
+- intent: inquire_courses
+  examples: |
+    - I want the course list.
+    - I want the courses spaces list.
+    - I want to know about the courses you have.
+    - أريد قائمة الدورات
+    - أريد أن أعرف عن الدورات التي لديكم
+    - je voudrais la liste des cours
+    - je voudrais la liste des espaces de cours
+    - quels cours proposez-vous ?
+    - je veux savoir quels cours vous avez
+
+- intent: register_courses
+  examples: |
+    - How can I enroll in courses?
+    - What are the steps to sign up for courses?
+    - How do I register for courses?
+    - How can I sign up for courses?
+    - كيف يمكنني التسجيل في الدورات؟
+    - ما هي خطوات التسجيل في الدورات؟
+    - comment s'inscrire aux cours ?
+    - quelles sont les étapes pour s'inscrire aux cours ?
+    - comment puis-je m'inscrire aux cours ?
+
+- intent: enrolled_courses
+  examples: |
+    - How can I find the courses I'm already enrolled in?
+    - How do I locate the courses I am registered for?
+    - How can I see the courses I am signed up for?
+    - How do I find the courses I have enrolled in?
+    - How can I view the courses I'm currently enrolled in?
+    - كيف يمكنني العثور على الدورات التي سجلت فيها؟
+    - كيف يمكنني رؤية الدورات التي سجلت فيها؟
+    - comment puis-je trouver les cours auxquels je suis déjà inscrit ?
+    - comment voir les cours auxquels je suis inscrit ?
+    - comment consulter les cours auxquels je suis enregistré ?
+
+- intent: complaint_send
+  examples: |
+    - How can I submit a complaint?
+    - How can I submit a review?
+    - How can I file a complaint?
+    - How can I send a complaint?
+    - كيف يمكنني تقديم شكوى؟
+    - كيف يمكنني إرسال شكوى؟
+    - comment puis-je soumettre une plainte ?
+    - comment puis-je soumettre un avis ?
+    - comment déposer un avis ?
+    - comment envoyer une plainte ?
+    
+- intent: signup_steps
+  examples: |
+    - How can I register on the platform, please?
+    - How do I sign up?
+    - I want to register.
+    - كيف يمكنني التسجيل على المنصة؟
+    - أريد التسجيل
+    - comment puis-je m'inscrire sur la plateforme ?
+    - comment s'inscrire ?
+    - je veux m'inscrire
+
+- intent: login_steps
+  examples: |
+    - How can I log in to the platform, please?
+    - How do I login?
+    - I want to connect.
+    - I want to login.
+    - كيف يمكنني تسجيل الدخول إلى المنصة؟
+    - أريد تسجيل الدخول
+    - comment puis-je me connecter à la plateforme ?
+    - comment me connecter ?
+    - je veux me connecter
+
+- intent: search_courses
+  examples: |
+    - I'm interested in learning about {course_name}
+    - Are there any classes on {course_name}?
+    - I'd like to know about {course_name}
+    - Can you tell me about courses related to {course_name}?
+    - Do you have any information on {course_name} classes?
+    - What can you tell me about {course_name} courses?
+    - Are there courses available for {course_name}?
+    - Where can I find courses on {course_name}?
+    - I want to study {course_name}
+    - Please show me courses on {course_name}
+    - أنا مهتم بتعلم عن {course_name}
+    - هل توجد أي دروس حول {course_name}؟
+    - أريد معرفة المزيد عن {course_name}
+    - هل يمكنك إخباري عن الدورات المتعلقة بـ {course_name}؟
+    - هل لديك أي معلومات عن دورات {course_name}؟
+    - ماذا يمكنك أن تخبرني عن دورات {course_name}؟
+    - Je suis intéressé par l'apprentissage de {course_name}
+    - Y a-t-il des cours sur {course_name}?
+    - J'aimerais en savoir plus sur {course_name}
+    - Pouvez-vous me parler des cours liés à {course_name}?
+    - Avez-vous des informations sur les cours de {course_name}?
+    - Que pouvez-vous me dire sur les cours de {course_name}?
+    - Quels sont les cours disponibles pour {course_name}?
+    - Où puis-je trouver des cours sur {course_name}?
+    - Je veux étudier {course_name}
+    - Montrez-moi les cours sur {course_name}, s'il vous plaît
+
+- intent: select_course
+  examples: |
+    - cours {course_number}
+    - cours {course_number}
+    - cours numéro {course_number}
+    - I choose course {course_number}
+    - select course {course_number}
+    - دورة {course_number}
+    - أختار دورة {course_number}
+
+- intent: understand_subject
+  examples: |
+    - I want to understand {subject}
+    - Can you explain {subject} to me?
+    - I need help understanding {subject}
+    - Please tell me about {subject}
+    - What is {subject}?
+    - How does {subject} work?
+    - أريد أن أفهم {subject}
+    - هل يمكنك شرح {subject} لي؟
+    - أحتاج لمساعدتك في فهم {subject}
+    - أخبرني عن {subject}
+    - ما هو {subject}؟
+    - كيف يعمل {subject}؟
+    - Je veux comprendre {subject}
+    - Pouvez-vous m'expliquer {subject}?
+    - J'ai besoin d'aide pour comprendre {subject}
+    - Parlez-moi de {subject}
+    - Qu'est-ce que {subject}?
+    - Comment fonctionne {subject}?
+
+- intent: list_enrolled_courses
+  examples: |
+    - Quels sont les cours où je suis inscrit ?
+    - Montre-moi les cours où je suis inscrit.
+    - Cours inscrits.
+    - Liste de mes cours.
+    - What courses am I enrolled in?
+    - Show me the courses I am enrolled in.
+    - Enrolled courses.
+    - List my courses.
+    - ما هي الدورات التي أنا مسجل فيها؟
+    - أرني الدورات التي أنا مسجل فيها.
+    - الدورات المسجلة.
+    - قائمة دوراتي.
+    - Quels cours ai-je inscrits?
+    - Pouvez-vous me montrer les cours où je suis inscrit?
+    - Liste des cours inscrits.
+    - Montrez-moi mes cours.
+    - What classes am I registered for?
+    - Can you show me my enrolled classes?
+    - Registered courses.
+    - Display my courses.
+    - ما هي الفصول التي أنا مسجل فيها؟
+    - هل يمكنك إظهار الفصول التي أنا مسجل فيها؟
+    - دوراتي المسجلة.
+    - اعرض لي دوراتي.
+
+- intent: inquire_course_quizzes
+  examples: |
+    - Est-ce que le cours [course_name] a des quizzes ?
+    - Le cours [course_name] contient des quizzes ?
+    - Y a-t-il des quizzes dans le cours [course_name]?
+    - Les quizzes du cours [course_name]
+    - Does the course [course_name] have quizzes?
+    - Does the course [course_name] contain quizzes?
+    - Are there quizzes in the course [course_name]?
+    - The quizzes of the course [course_name]
+    - هل يحتوي دورة[course_name] على اختبارات؟
+    - هل يحتوي دورة[course_name] على اختبارات؟
+    - هل هناك اختبارات في دورة[course_name]؟
+    - اختبارات دورة[course_name]
+    - Est-ce qu'il y a des tests dans le cours [course_name]?
+    - Le cours [course_name] comprend-il des tests?
+    - Y a-t-il des tests dans le cours [course_name]?
+    - Les tests du cours [course_name]
+    - Are there any quizzes in the course [course_name]?
+    - Does [course_name] have any quizzes?
+    - Are quizzes included in the course [course_name]?
+    - The quizzes associated with the course [course_name]
+    - هل يوجد أي اختبارات في دورة[course_name]؟
+    - هل يحتوي [course_name] على أي اختبارات؟
+    - هل تتضمن دورة [course_name] اختبارات؟
+    - الاختبارات المرتبطة بدورة [course_name]
+
+- intent: ask_advanced_question
+  examples: |
+    - understand [subject]
+    - explain [subject]
+    - learn about [subject]
+    - teach me [subject]
+    - tell me about [subject]
+    - information about [subject]
+    - how does [subject] work 
+    - what is [subject]
+    - can you explain [subject]
